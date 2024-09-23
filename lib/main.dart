@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'views/main_view.dart';
-
+import 'controllers/route.dart'; // Import your route definitions
+import 'controllers/main_controller.dart';
 void main() {
   runApp(MyApp());
 }
@@ -9,6 +9,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Get.put(MainController());
     return GetMaterialApp(
       theme: ThemeData(
         primaryColor: Colors.orange, // Main color of the app
@@ -24,7 +25,8 @@ class MyApp extends StatelessWidget {
         ),
         iconTheme: IconThemeData(color: Colors.orange),
       ),
-      home: MainView(), // Your main view with bottom navigation
+      initialRoute: AppRoutes.main, // Start with MainView route
+      getPages: AppPages.pages, // Use defined routes
     );
   }
 }
