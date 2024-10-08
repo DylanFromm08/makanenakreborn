@@ -9,7 +9,15 @@ class DrinkListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Drink List")),
+      appBar: AppBar(
+         title: Text("Drink List"),
+         centerTitle: true, 
+         titleTextStyle: TextStyle(
+         color: Colors.white, 
+         fontWeight: FontWeight.bold, 
+         fontSize: 20, 
+       ),
+      ),
       body: Obx(() {
         return ListView(
           children: controller.drinks.map((drink) {

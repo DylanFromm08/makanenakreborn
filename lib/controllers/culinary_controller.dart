@@ -7,8 +7,8 @@ class CulinaryController extends GetxController {
   var favoriteDrinks = <Drink>[].obs;
 
   var foods = <Food>[
-    Food(name: "Nasi Goreng", imageUrl: "https://www.finnafood.com/blog/wp-content/uploads/2023/01/cara-membuat-nasi-goreng-kampung.jpg", description: "Fried rice with a mix of vegetables and chicken."),
-    Food(name: "Rendang", imageUrl: "https://media.istockphoto.com/id/165179871/id/foto/daging-sapi-rendang.jpg?s=612x612&w=0&k=20&c=iDUP84wDJ6K-uSmPootsy_G-UFlf-ChOjI3NBhVG-AE=", description: "Spicy beef stew slow-cooked in coconut milk."),
+    Food(name: "Nasi Goreng", imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8ksNt29EXAMrAnFmj5mKyv8m-qMFJQ1uW3A&s", description: "Fried rice with a mix of vegetables and chicken."),
+    Food(name: "Rendang", imageUrl: "https://akcdn.detik.net.id/visual/2022/06/10/ilustrasi-rendang-1_169.jpeg?w=650", description: "Spicy beef stew slow-cooked in coconut milk."),
     Food(name: "Sate", imageUrl: "https://d1vbn70lmn1nqe.cloudfront.net/prod/wp-content/uploads/2023/07/14053934/Mudah-Dibuat-di-Rumah-Ini-Resep-Sate-Ayam-Bumbu-Kacang-yang-Lezat-.jpg", description: "Grilled skewered meat served with peanut sauce."),
     Food(name: "Gado-Gado", imageUrl: "https://img.jakpost.net/c/2017/01/31/2017_01_31_20436_1485827331._large.jpg", description: "Vegetable salad with peanut sauce."),
     Food(name: "Bakso", imageUrl: "https://assets.unileversolutions.com/recipes-v2/245281.jpg", description: "Meatballs served in savory broth."),

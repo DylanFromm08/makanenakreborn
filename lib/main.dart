@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'controllers/route.dart'; // Import your route definitions
-import 'controllers/main_controller.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -9,7 +9,6 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Get.put(MainController());
     return GetMaterialApp(
       theme: ThemeData(
         primaryColor: Colors.orange, // Main color of the app

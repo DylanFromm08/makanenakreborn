@@ -9,7 +9,16 @@ class FoodListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Food List")),
+      appBar: AppBar(
+         title: Text("Food List"),
+         centerTitle: true, 
+         titleTextStyle: TextStyle(
+         color: Colors.white, 
+         fontWeight: FontWeight.bold, 
+         fontSize: 20, 
+       ),
+      ),
+
       body: Obx(() {
         return ListView(
           children: controller.foods.map((food) {

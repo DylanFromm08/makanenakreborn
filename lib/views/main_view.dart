@@ -1,34 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:makanenakreborn/views/drink_list_view.dart';
-import 'package:makanenakreborn/views/favorite_list_view.dart';
-import 'package:makanenakreborn/views/food_list_view.dart';
-import '../controllers/main_controller.dart'; // Import the controller
-import '../controllers/route.dart'; // Import the routes
+import '../controllers/main_controller.dart';
+import '../views/food_list_view.dart'; // Import FoodListView
+import '../views/drink_list_view.dart'; // Import DrinkListView
+import '../views/favorite_list_view.dart'; // Import FavoriteListView
 
 class MainView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final MainController controller = Get.find(); // Get the controller from bindings
+
     return Scaffold(
-      body: Navigator(
-        key: Get.nestedKey(1),
-        initialRoute: AppRoutes.food, // Default tab view
-        onGenerateRoute: (settings) {
-          switch (settings.name) {
-            case AppRoutes.food:
-              return GetPageRoute(page: () => FoodListView());
-            case AppRoutes.drink:
-              return GetPageRoute(page: () => DrinkListView());
-            case AppRoutes.favorites:
-              return GetPageRoute(page: () => FavoriteListView());
-            default:
-              return null;
-          }
-        },
-      ),
+      body: Obx(() {
+        return IndexedStack(
+          index: controller.currentIndex.value,
+          children: [
+            FoodListView(),
+            DrinkListView(),
+            FavoriteListView(),
+          ],
+        );
+      }),
       bottomNavigationBar: Obx(() {
         return BottomNavigationBar(
-          currentIndex: Get.find<MainController>().currentIndex.value,
+          currentIndex: controller.currentIndex.value,
           selectedItemColor: Colors.orange,
           unselectedItemColor: Colors.grey,
           items: [
@@ -37,7 +32,7 @@ class MainView extends StatelessWidget {
             BottomNavigationBarItem(icon: Icon(Icons.favorite), label: "Favorites"),
           ],
           onTap: (index) {
-            Get.find<MainController>().changeTab(index);
+            controller.changeTab(index);
           },
         );
       }),

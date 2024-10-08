@@ -9,7 +9,15 @@ class FavoriteListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Favorite List")),
+      appBar: AppBar(
+         title: Text("Favorite List"),
+         centerTitle: true, 
+         titleTextStyle: TextStyle(
+         color: Colors.white, 
+         fontWeight: FontWeight.bold, 
+         fontSize: 20, 
+       ),
+      ),
       body: Obx(() {
         if (controller.favoriteFoods.isEmpty && controller.favoriteDrinks.isEmpty) {
           return Center(child: Text("Looks like you haven't added any favorite food/drink here"));
