@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'controllers/route.dart'; // Import your route definitions
+import 'controllers/route.dart';
 
 void main() {
-
   runApp(MyApp());
 }
 
@@ -11,19 +10,26 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      theme: ThemeData(
-        primaryColor: Colors.orange,
-        scaffoldBackgroundColor: Colors.white,
+      theme: ThemeData.dark().copyWith(
+        primaryColor: Colors.deepOrange,
+        scaffoldBackgroundColor: Color(0xFF1F1F1F),
+        cardColor: Color(0xFF2C2C2C),
         appBarTheme: AppBarTheme(
-          color: Colors.orange,
-          iconTheme: IconThemeData(color: Colors.white),
-          titleTextStyle: TextStyle(color: Colors.white, fontSize: 20),
+          backgroundColor: Color(0xFF2C2C2C),
+          elevation: 0,
+          centerTitle: true,
+          titleTextStyle: TextStyle(
+            color: Colors.white,
+            fontSize: 22,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
-          selectedItemColor: Colors.orange,
+          backgroundColor: Color(0xFF2C2C2C),
+          selectedItemColor: Colors.deepOrange,
           unselectedItemColor: Colors.grey,
+          elevation: 8,
         ),
-        iconTheme: IconThemeData(color: Colors.orange),
       ),
       initialRoute: AppRoutes.main,
       getPages: AppPages.pages,
