@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'controllers/route.dart'; // Import your route definitions
 
 void main() {
+
   runApp(MyApp());
 }
 
@@ -11,21 +12,21 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       theme: ThemeData(
-        primaryColor: Colors.orange, // Main color of the app
+        primaryColor: Colors.orange,
         scaffoldBackgroundColor: Colors.white,
         appBarTheme: AppBarTheme(
-          color: Colors.orange, // AppBar color
-          iconTheme: IconThemeData(color: Colors.white), // AppBar icon color
+          color: Colors.orange,
+          iconTheme: IconThemeData(color: Colors.white),
           titleTextStyle: TextStyle(color: Colors.white, fontSize: 20),
         ),
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
-          selectedItemColor: Colors.orange, // Selected icon color
-          unselectedItemColor: Colors.grey, // Unselected icon color
+          selectedItemColor: Colors.orange,
+          unselectedItemColor: Colors.grey,
         ),
         iconTheme: IconThemeData(color: Colors.orange),
       ),
-      initialRoute: AppRoutes.main, // Start with MainView route
-      getPages: AppPages.pages, // Use defined routes
+      initialRoute: AppRoutes.main,
+      getPages: AppPages.pages,
     );
   }
 }

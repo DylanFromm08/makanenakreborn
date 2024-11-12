@@ -10,6 +10,8 @@ dependencies:
   flutter:
     sdk: flutter
   get: ^4.6.1
+  sqflite: ^2.4.0  # Keep this for Android
+
 
 dev_dependencies:
   flutter_test:

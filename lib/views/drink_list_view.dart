@@ -8,26 +8,22 @@ class DrinkListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    controller.loadFavorites();
+
     return Scaffold(
       appBar: AppBar(
          title: Text("Drink List"),
          centerTitle: true, 
-         titleTextStyle: TextStyle(
-         color: Colors.white, 
-         fontWeight: FontWeight.bold, 
-         fontSize: 20, 
-       ),
+         titleTextStyle: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
       ),
       body: Obx(() {
         return ListView(
           children: controller.drinks.map((drink) {
-            bool isFavorite = controller.favoriteDrinks.contains(drink);
-
             return FoodDrinkCard(
               item: drink,
-              isFavorite: isFavorite,
-              onFavorite: () {
-                if (isFavorite) {
+              isFavorite: drink.isFavorite, // Gunakan isFavorite dari model
+              onFavoriteToggle: () {
+                if (drink.isFavorite) {
                   controller.removeFromFavoritesDrink(drink);
                 } else {
                   controller.addToFavoritesDrink(drink);

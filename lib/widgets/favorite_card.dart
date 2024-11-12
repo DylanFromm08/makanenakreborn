@@ -66,8 +66,8 @@ class FoodDrinkCard extends StatelessWidget {
             children: [
               IconButton(
                 icon: Icon(
-                  item.isFavorite ? Icons.favorite : Icons.favorite_border,
-                  color: item.isFavorite ? Colors.red : Colors.grey,
+                  item.isFavorite ? Icons.favorite : Icons.favorite,
+                  color: item.isFavorite ? Colors.red : Colors.red,
                 ),
                 onPressed: () => onFavoriteToggle(),
               ),

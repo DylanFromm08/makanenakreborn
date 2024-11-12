@@ -8,27 +8,22 @@ class FoodListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    controller.loadFavorites();
+
     return Scaffold(
       appBar: AppBar(
          title: Text("Food List"),
          centerTitle: true, 
-         titleTextStyle: TextStyle(
-         color: Colors.white, 
-         fontWeight: FontWeight.bold, 
-         fontSize: 20, 
-       ),
+         titleTextStyle: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
       ),
-
       body: Obx(() {
         return ListView(
           children: controller.foods.map((food) {
-            bool isFavorite = controller.favoriteFoods.contains(food);
-
             return FoodDrinkCard(
               item: food,
-              isFavorite: isFavorite,
-              onFavorite: () {
-                if (isFavorite) {
+              isFavorite: food.isFavorite, // Gunakan isFavorite dari model
+              onFavoriteToggle: () {
+                if (food.isFavorite) {
                   controller.removeFromFavoritesFood(food);
                 } else {
                   controller.addToFavoritesFood(food);
@@ -41,3 +36,4 @@ class FoodListView extends StatelessWidget {
     );
   }
 }
+
